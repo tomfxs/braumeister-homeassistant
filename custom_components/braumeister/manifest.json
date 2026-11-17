@@ -1,0 +1,14 @@
+{
+  "codeowners": [
+    "@tomfxs"
+  ],
+  "config_flow": true,
+  "documentation": "https://github.com/tomfxs/braumeister-homeassistant",
+  "domain": "braumeister",
+  "integration_type": "service",
+  "iot_class": "local_polling",
+  "issue_tracker": "https://github.com/tomfxs/braumeister-homeassistant/issues",
+  "name": "Braumeister",
+  "requirements": [],
+  "version": "1.0.0"
+}

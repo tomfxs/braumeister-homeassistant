@@ -1,0 +1,7 @@
+start_recipe:
+  fields:
+    uuid:
+      required: true
+      example: "7fc306fc-be2b-11f1-8392-de48689ee4f5"
+      selector:
+        text:

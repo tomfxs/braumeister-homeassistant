@@ -1,0 +1,196 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Braumeister",
+        "description": "Address of the Braumeister dashboard (dashboard.js).",
+        "data": {
+          "host": "Host",
+          "port": "Port"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Cannot reach the dashboard"
+    },
+    "abort": {
+      "already_configured": "Already configured"
+    }
+  },
+  "entity": {
+    "sensor": {
+      "state": {
+        "name": "State"
+      },
+      "temperature": {
+        "name": "Temperature"
+      },
+      "target_temperature": {
+        "name": "Target temperature"
+      },
+      "phase": {
+        "name": "Phase"
+      },
+      "recipe": {
+        "name": "Recipe"
+      },
+      "total_progress": {
+        "name": "Total progress"
+      },
+      "phase_progress": {
+        "name": "Phase progress"
+      },
+      "timer_remaining": {
+        "name": "Timer remaining"
+      },
+      "total_remaining": {
+        "name": "Total remaining"
+      },
+      "power": {
+        "name": "Power"
+      },
+      "voltage": {
+        "name": "Voltage"
+      },
+      "current": {
+        "name": "Current"
+      },
+      "energy": {
+        "name": "Energy"
+      },
+      "plug_temperature": {
+        "name": "Plug temperature"
+      },
+      "session": {
+        "name": "Brew session"
+      },
+      "checklist_done": {
+        "name": "Checklist done"
+      },
+      "alert": {
+        "name": "Alert"
+      },
+      "last_notification": {
+        "name": "Last notification"
+      },
+      "firmware": {
+        "name": "Firmware"
+      }
+    },
+    "binary_sensor": {
+      "online": {
+        "name": "Online"
+      },
+      "powered": {
+        "name": "Powered"
+      },
+      "brewing": {
+        "name": "Brewing"
+      },
+      "manual_mode": {
+        "name": "Manual mode"
+      },
+      "heating": {
+        "name": "Heating"
+      },
+      "pump": {
+        "name": "Pump"
+      },
+      "timer_running": {
+        "name": "Timer running"
+      },
+      "water_filled": {
+        "name": "Water filled"
+      },
+      "alert_active": {
+        "name": "Alert active"
+      },
+      "plug_on": {
+        "name": "Plug on"
+      },
+      "session_running": {
+        "name": "Session running"
+      },
+      "camera_error": {
+        "name": "Camera error"
+      },
+      "dry_run": {
+        "name": "Dry run"
+      }
+    },
+    "switch": {
+      "manual_pump": {
+        "name": "Manual pump"
+      },
+      "manual_temperature_control": {
+        "name": "Manual temperature control"
+      },
+      "manual_timer": {
+        "name": "Manual timer"
+      }
+    },
+    "number": {
+      "manual_temperature": {
+        "name": "Manual target temperature"
+      },
+      "manual_timer_duration": {
+        "name": "Manual timer duration"
+      }
+    },
+    "button": {
+      "start_brewing": {
+        "name": "Start brewing"
+      },
+      "request_abort": {
+        "name": "Request abort"
+      },
+      "confirm_abort": {
+        "name": "Confirm abort"
+      },
+      "cancel_abort": {
+        "name": "Cancel abort"
+      },
+      "start_manual_brewing": {
+        "name": "Start manual (brewing)"
+      },
+      "start_manual_fermenting": {
+        "name": "Start manual (fermenting)"
+      },
+      "stop_manual": {
+        "name": "Stop manual"
+      },
+      "water_confirm": {
+        "name": "Confirm water"
+      },
+      "camera_left": {
+        "name": "Camera left"
+      },
+      "camera_right": {
+        "name": "Camera right"
+      },
+      "camera_up": {
+        "name": "Camera up"
+      },
+      "camera_down": {
+        "name": "Camera down"
+      }
+    },
+    "camera": {
+      "camera": {
+        "name": "Camera"
+      }
+    }
+  },
+  "services": {
+    "start_recipe": {
+      "name": "Start recipe",
+      "description": "Starts a recipe on the Braumeister (device must be idle).",
+      "fields": {
+        "uuid": {
+          "name": "UUID",
+          "description": "My-Speidel recipe UUID"
+        }
+      }
+    }
+  }
+}

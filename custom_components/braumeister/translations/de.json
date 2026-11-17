@@ -1,0 +1,196 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Braumeister",
+        "description": "Adresse des Braumeister-Dashboards (dashboard.js).",
+        "data": {
+          "host": "Host",
+          "port": "Port"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Dashboard nicht erreichbar"
+    },
+    "abort": {
+      "already_configured": "Bereits eingerichtet"
+    }
+  },
+  "entity": {
+    "sensor": {
+      "state": {
+        "name": "Zustand"
+      },
+      "temperature": {
+        "name": "Temperatur"
+      },
+      "target_temperature": {
+        "name": "Solltemperatur"
+      },
+      "phase": {
+        "name": "Phase"
+      },
+      "recipe": {
+        "name": "Rezept"
+      },
+      "total_progress": {
+        "name": "Gesamtfortschritt"
+      },
+      "phase_progress": {
+        "name": "Phasenfortschritt"
+      },
+      "timer_remaining": {
+        "name": "Timer Restzeit"
+      },
+      "total_remaining": {
+        "name": "Gesamt-Restzeit"
+      },
+      "power": {
+        "name": "Leistung"
+      },
+      "voltage": {
+        "name": "Spannung"
+      },
+      "current": {
+        "name": "Strom"
+      },
+      "energy": {
+        "name": "Energie"
+      },
+      "plug_temperature": {
+        "name": "Steckdosen-Temperatur"
+      },
+      "session": {
+        "name": "Brausession"
+      },
+      "checklist_done": {
+        "name": "Checkliste erledigt"
+      },
+      "alert": {
+        "name": "Warnung"
+      },
+      "last_notification": {
+        "name": "Letzter Hinweis"
+      },
+      "firmware": {
+        "name": "Firmware"
+      }
+    },
+    "binary_sensor": {
+      "online": {
+        "name": "Online"
+      },
+      "powered": {
+        "name": "Strom an"
+      },
+      "brewing": {
+        "name": "Sud läuft"
+      },
+      "manual_mode": {
+        "name": "Handbetrieb"
+      },
+      "heating": {
+        "name": "Heizung"
+      },
+      "pump": {
+        "name": "Pumpe"
+      },
+      "timer_running": {
+        "name": "Timer läuft"
+      },
+      "water_filled": {
+        "name": "Wasser eingefüllt"
+      },
+      "alert_active": {
+        "name": "Warnung aktiv"
+      },
+      "plug_on": {
+        "name": "Steckdose an"
+      },
+      "session_running": {
+        "name": "Session läuft"
+      },
+      "camera_error": {
+        "name": "Kamerafehler"
+      },
+      "dry_run": {
+        "name": "Probelauf"
+      }
+    },
+    "switch": {
+      "manual_pump": {
+        "name": "Handbetrieb Pumpe"
+      },
+      "manual_temperature_control": {
+        "name": "Handbetrieb Temperaturregelung"
+      },
+      "manual_timer": {
+        "name": "Handbetrieb Timer"
+      }
+    },
+    "number": {
+      "manual_temperature": {
+        "name": "Handbetrieb Solltemperatur"
+      },
+      "manual_timer_duration": {
+        "name": "Handbetrieb Timer-Dauer"
+      }
+    },
+    "button": {
+      "start_brewing": {
+        "name": "Brauen starten"
+      },
+      "request_abort": {
+        "name": "Abbruch anfordern"
+      },
+      "confirm_abort": {
+        "name": "Abbruch bestätigen"
+      },
+      "cancel_abort": {
+        "name": "Abbruch zurücknehmen"
+      },
+      "start_manual_brewing": {
+        "name": "Handbetrieb starten (Brauen)"
+      },
+      "start_manual_fermenting": {
+        "name": "Handbetrieb starten (Gären)"
+      },
+      "stop_manual": {
+        "name": "Handbetrieb beenden"
+      },
+      "water_confirm": {
+        "name": "Wasser bestätigen"
+      },
+      "camera_left": {
+        "name": "Kamera links"
+      },
+      "camera_right": {
+        "name": "Kamera rechts"
+      },
+      "camera_up": {
+        "name": "Kamera hoch"
+      },
+      "camera_down": {
+        "name": "Kamera runter"
+      }
+    },
+    "camera": {
+      "camera": {
+        "name": "Kamera"
+      }
+    }
+  },
+  "services": {
+    "start_recipe": {
+      "name": "Rezept starten",
+      "description": "Startet ein Rezept auf dem Braumeister (Gerät muss im Leerlauf sein).",
+      "fields": {
+        "uuid": {
+          "name": "UUID",
+          "description": "Rezept-UUID von My-Speidel"
+        }
+      }
+    }
+  }
+}
