@@ -111,9 +111,6 @@
       "session_running": {
         "name": "Session läuft"
       },
-      "camera_error": {
-        "name": "Kamerafehler"
-      },
       "dry_run": {
         "name": "Probelauf"
       }
@@ -161,23 +158,6 @@
       },
       "water_confirm": {
         "name": "Wasser bestätigen"
-      },
-      "camera_left": {
-        "name": "Kamera links"
-      },
-      "camera_right": {
-        "name": "Kamera rechts"
-      },
-      "camera_up": {
-        "name": "Kamera hoch"
-      },
-      "camera_down": {
-        "name": "Kamera runter"
-      }
-    },
-    "camera": {
-      "camera": {
-        "name": "Kamera"
       }
     }
   },

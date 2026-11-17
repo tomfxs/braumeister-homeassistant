@@ -1,4 +1,4 @@
-"""Befehle an den Braumeister und Kamera-Schwenken."""
+"""Befehle an den Braumeister."""
 from __future__ import annotations
 
 from dataclasses import dataclass, field
@@ -15,7 +15,6 @@ from .entity import BraumeisterEntity
 class BmButtonDescription(ButtonEntityDescription):
     command: str | None = None
     params: dict[str, Any] = field(default_factory=dict)
-    ptz: str | None = None            # Richtung für die Kamera
 
 
 def _b(key: str, **kw: Any) -> BmButtonDescription:
@@ -31,10 +30,6 @@ BUTTONS = (
     _b("start_manual_fermenting", command="startManual", params={"mode": "fermenting"}),
     _b("stop_manual", command="stopManual"),
     _b("water_confirm", command="manual/waterConfirm"),
-    _b("camera_left", ptz="left"),
-    _b("camera_right", ptz="right"),
-    _b("camera_up", ptz="up"),
-    _b("camera_down", ptz="down"),
 )
 
 
@@ -52,8 +47,5 @@ class BraumeisterButton(BraumeisterEntity, ButtonEntity):
 
     async def async_press(self) -> None:
         d = self.entity_description
-        if d.ptz:
-            await self.coordinator.ptz("move", {"dir": d.ptz, "step": "small"})
-        else:
-            # Der Server prüft, ob der Befehl im aktuellen Gerätezustand erlaubt ist, und meldet sonst einen Fehler.
-            await self.coordinator.command(d.command, **d.params)
+        # Der Server prüft, ob der Befehl im aktuellen Gerätezustand erlaubt ist, und meldet sonst einen Fehler.
+        await self.coordinator.command(d.command, **d.params)

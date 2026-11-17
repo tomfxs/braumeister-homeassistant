@@ -42,8 +42,6 @@ BINARY: tuple[BmBinaryDescription, ...] = (
                         fn=lambda v: v("shelly.output")),
     BmBinaryDescription(key="session_running", translation_key="session_running",
                         fn=lambda v: v("session.id") is not None),
-    BmBinaryDescription(key="camera_error", translation_key="camera_error", device_class=BinarySensorDeviceClass.PROBLEM,
-                        entity_category=EntityCategory.DIAGNOSTIC, fn=lambda v: v("camera.lastError") is not None),
     BmBinaryDescription(key="dry_run", translation_key="dry_run", entity_category=EntityCategory.DIAGNOSTIC,
                         fn=lambda v: bool(v("device.dryRun"))),
 )

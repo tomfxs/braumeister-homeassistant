@@ -3,7 +3,7 @@
 DOMAIN = "braumeister"
 DEFAULT_PORT = 8080
 SCAN_INTERVAL_SECONDS = 5
-PLATFORMS = ["sensor", "binary_sensor", "switch", "number", "button", "camera"]
+PLATFORMS = ["sensor", "binary_sensor", "switch", "number", "button"]
 
 # Zustandsnamen des Braumeisters (wie server/device/states.js)
 DEVICE_STATES = [

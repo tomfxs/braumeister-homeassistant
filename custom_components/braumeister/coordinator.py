@@ -44,6 +44,3 @@ class BraumeisterCoordinator(DataUpdateCoordinator[dict[str, Any]]):
         """Befehl an den Braumeister (POST /api/device/command), danach Zustand neu lesen."""
         await self._post("/api/device/command", {"command": command, **params})
         await self.async_request_refresh()
-
-    async def ptz(self, action: str, body: dict[str, Any]) -> None:
-        await self._post(f"/api/camera/ptz/{action}", body)
