@@ -46,21 +46,6 @@
       "total_remaining": {
         "name": "Total remaining"
       },
-      "power": {
-        "name": "Power"
-      },
-      "voltage": {
-        "name": "Voltage"
-      },
-      "current": {
-        "name": "Current"
-      },
-      "energy": {
-        "name": "Energy"
-      },
-      "plug_temperature": {
-        "name": "Plug temperature"
-      },
       "session": {
         "name": "Brew session"
       },
@@ -80,9 +65,6 @@
     "binary_sensor": {
       "online": {
         "name": "Online"
-      },
-      "powered": {
-        "name": "Powered"
       },
       "brewing": {
         "name": "Brewing"
@@ -104,9 +86,6 @@
       },
       "alert_active": {
         "name": "Alert active"
-      },
-      "plug_on": {
-        "name": "Plug on"
       },
       "session_running": {
         "name": "Session running"

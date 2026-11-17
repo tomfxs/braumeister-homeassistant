@@ -22,8 +22,6 @@ class BmBinaryDescription(BinarySensorEntityDescription):
 BINARY: tuple[BmBinaryDescription, ...] = (
     BmBinaryDescription(key="online", translation_key="online", device_class=BinarySensorDeviceClass.CONNECTIVITY,
                         fn=lambda v: bool(v("device.fresh"))),
-    BmBinaryDescription(key="powered", translation_key="powered", device_class=BinarySensorDeviceClass.POWER,
-                        fn=lambda v: None if v("shelly.output") is None else not v("device.powerOff")),
     BmBinaryDescription(key="brewing", translation_key="brewing", device_class=BinarySensorDeviceClass.RUNNING,
                         fn=lambda v: v("device.group") == "brewing"),
     BmBinaryDescription(key="manual_mode", translation_key="manual_mode",
@@ -38,8 +36,6 @@ BINARY: tuple[BmBinaryDescription, ...] = (
                         fn=lambda v: v("device.manual.waterFilledIn")),
     BmBinaryDescription(key="alert", translation_key="alert_active", device_class=BinarySensorDeviceClass.PROBLEM,
                         fn=lambda v: bool(v("alert.recent"))),
-    BmBinaryDescription(key="plug_on", translation_key="plug_on", device_class=BinarySensorDeviceClass.POWER,
-                        fn=lambda v: v("shelly.output")),
     BmBinaryDescription(key="session_running", translation_key="session_running",
                         fn=lambda v: v("session.id") is not None),
     BmBinaryDescription(key="dry_run", translation_key="dry_run", entity_category=EntityCategory.DIAGNOSTIC,

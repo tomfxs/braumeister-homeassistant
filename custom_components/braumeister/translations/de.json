@@ -46,21 +46,6 @@
       "total_remaining": {
         "name": "Gesamt-Restzeit"
       },
-      "power": {
-        "name": "Leistung"
-      },
-      "voltage": {
-        "name": "Spannung"
-      },
-      "current": {
-        "name": "Strom"
-      },
-      "energy": {
-        "name": "Energie"
-      },
-      "plug_temperature": {
-        "name": "Steckdosen-Temperatur"
-      },
       "session": {
         "name": "Brausession"
       },
@@ -80,9 +65,6 @@
     "binary_sensor": {
       "online": {
         "name": "Online"
-      },
-      "powered": {
-        "name": "Strom an"
       },
       "brewing": {
         "name": "Sud läuft"
@@ -104,9 +86,6 @@
       },
       "alert_active": {
         "name": "Warnung aktiv"
-      },
-      "plug_on": {
-        "name": "Steckdose an"
       },
       "session_running": {
         "name": "Session läuft"

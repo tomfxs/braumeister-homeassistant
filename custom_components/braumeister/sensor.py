@@ -7,10 +7,7 @@ from typing import Any
 from homeassistant.components.sensor import (
     SensorDeviceClass, SensorEntity, SensorEntityDescription, SensorStateClass,
 )
-from homeassistant.const import (
-    PERCENTAGE, EntityCategory, UnitOfElectricCurrent, UnitOfElectricPotential, UnitOfEnergy,
-    UnitOfPower, UnitOfTemperature, UnitOfTime,
-)
+from homeassistant.const import PERCENTAGE, EntityCategory, UnitOfTemperature, UnitOfTime
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
@@ -54,21 +51,6 @@ SENSORS: tuple[BmSensorDescription, ...] = (
     BmSensorDescription(key="total_remaining", translation_key="total_remaining", path="device.timers.totalRemainingTime",
                         device_class=SensorDeviceClass.DURATION, native_unit_of_measurement=UnitOfTime.SECONDS,
                         convert=_seconds),
-    # Shelly-Steckdose
-    BmSensorDescription(key="power", translation_key="power", path="shelly.apower", device_class=SensorDeviceClass.POWER,
-                        native_unit_of_measurement=UnitOfPower.WATT, state_class=SensorStateClass.MEASUREMENT),
-    BmSensorDescription(key="voltage", translation_key="voltage", path="shelly.voltage", device_class=SensorDeviceClass.VOLTAGE,
-                        native_unit_of_measurement=UnitOfElectricPotential.VOLT, state_class=SensorStateClass.MEASUREMENT,
-                        entity_category=EntityCategory.DIAGNOSTIC),
-    BmSensorDescription(key="current", translation_key="current", path="shelly.current", device_class=SensorDeviceClass.CURRENT,
-                        native_unit_of_measurement=UnitOfElectricCurrent.AMPERE, state_class=SensorStateClass.MEASUREMENT,
-                        entity_category=EntityCategory.DIAGNOSTIC),
-    BmSensorDescription(key="energy", translation_key="energy", path="shelly.energyWh", device_class=SensorDeviceClass.ENERGY,
-                        native_unit_of_measurement=UnitOfEnergy.WATT_HOUR, state_class=SensorStateClass.TOTAL_INCREASING,
-                        suggested_unit_of_measurement=UnitOfEnergy.KILO_WATT_HOUR),
-    BmSensorDescription(key="plug_temperature", translation_key="plug_temperature", path="shelly.deviceTempC",
-                        device_class=SensorDeviceClass.TEMPERATURE, native_unit_of_measurement=UnitOfTemperature.CELSIUS,
-                        state_class=SensorStateClass.MEASUREMENT, entity_category=EntityCategory.DIAGNOSTIC),
     # Brausession
     BmSensorDescription(key="session", translation_key="session", path="session.name"),
     BmSensorDescription(key="checklist_done", translation_key="checklist_done", path="session.checklist.done"),
