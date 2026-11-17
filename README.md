@@ -1,51 +1,58 @@
-# Braumeister – Home-Assistant-Integration
+# Braumeister für Home Assistant
 
 <img src="icon.svg" width="96" align="right" alt="Braumeister">
 
-Bringt den Speidel Braumeister mit allen wichtigen Daten in Home Assistant. Die Integration spricht mit dem
-lokalen Braumeister-Dashboard (`node dashboard.js`, Port 8080), das `braumeister-client.js` füttert –
-sie verbindet sich also nicht selbst mit My-Speidel.
+Behalte deinen Speidel Braumeister auch in Home Assistant im Blick: Temperatur, Zustand, Fortschritt, Restzeiten und
+Warnungen wie „Deckel entfernen“ – und steuere ihn bei Bedarf direkt aus Home Assistant.
 
-Der Dashboard-Server liefert dafür einen gebündelten Zustand unter `GET /api/ha/state` (`server/api/homeassistant.js`).
-Befehle laufen über das vorhandene `POST /api/device/command` (mit den gleichen Zustandsprüfungen wie im Dashboard).
+Damit lassen sich zum Beispiel Handy-Meldungen, Automationen (etwa Licht an, wenn der Sud fertig ist) oder ein
+Dashboard mit dem aktuellen Brauverlauf bauen.
 
-## Installation mit HACS
+## Voraussetzungen
 
-Voraussetzung: [HACS](https://hacs.xyz) ist in Home Assistant installiert (Version 2025.1 oder neuer).
+- Home Assistant 2025.1 oder neuer mit installiertem [HACS](https://hacs.xyz)
+- Das **Braumeister-Dashboard** läuft in deinem Heimnetz (Standard: Port 8080). Du brauchst dessen IP-Adresse oder
+  Rechnernamen, z. B. `192.168.0.189`.
 
-1. In HACS oben rechts das Menü (⋮) › **Benutzerdefinierte Repositories**.
-2. Repository: `https://github.com/tomfxs/braumeister-homeassistant`, Kategorie: **Integration** › Hinzufügen.
-   (Das Repo muss öffentlich sein, oder in HACS ist ein GitHub-Token hinterlegt.)
-3. In HACS nach **Braumeister** suchen › Herunterladen (die neueste Version wählen).
+## Installation
+
+1. In Home Assistant **HACS** öffnen, oben rechts das Menü (⋮) › **Benutzerdefinierte Repositories**.
+2. Als Repository `https://github.com/tomfxs/braumeister-homeassistant` eintragen, als Kategorie **Integration** wählen
+   und **Hinzufügen** klicken.
+3. In HACS nach **Braumeister** suchen und **Herunterladen**.
 4. Home Assistant **neu starten**.
-5. Einstellungen › Geräte & Dienste › Integration hinzufügen › **Braumeister** – Host/IP des Rechners mit `dashboard.js` und Port (8080).
+5. *Einstellungen › Geräte & Dienste › Integration hinzufügen › Braumeister*. Dort die Adresse des Dashboards und den
+   Port eintragen.
 
-Das Dashboard hat keine Anmeldung – nur im Heimnetz erreichbar machen.
+Fertig – alle Entitäten erscheinen unter dem Gerät **Braumeister**.
 
-## Entitäten
+## Aktualisieren
+
+In HACS den Eintrag **Braumeister** öffnen und auf **Aktualisieren** klicken, danach Home Assistant neu starten.
+Wird kein Update angezeigt: oben rechts im Menü (⋮) **Repository aktualisieren** wählen.
+
+## Was du bekommst
 
 | Typ | Entitäten |
 |---|---|
-| Sensor | Zustand, Temperatur, Solltemperatur, Phase, Rezept, Gesamt-/Phasenfortschritt, Timer-/Gesamt-Restzeit, Brausession, Checkliste erledigt, Warnung („Deckel entfernen“), letzter Hinweis, Firmware |
-| Binärsensor | Online, Sud läuft, Handbetrieb, Heizung, Pumpe, Timer läuft, Wasser eingefüllt, Warnung aktiv, Session läuft, Probelauf |
+| Sensoren | Zustand, Temperatur, Solltemperatur, Phase, Rezept, Gesamt- und Phasenfortschritt, Timer-Restzeit, Gesamt-Restzeit, Brausession, Checkliste erledigt, Warnung, letzter Hinweis, Firmware |
+| Binärsensoren | Online, Sud läuft, Handbetrieb, Heizung, Pumpe, Timer läuft, Wasser eingefüllt, Warnung aktiv, Session läuft, Probelauf |
 | Schalter | Handbetrieb: Pumpe, Temperaturregelung, Timer |
-| Zahl | Handbetrieb: Solltemperatur, Timer-Dauer (Minuten) |
-| Button | Brauen starten, Abbruch anfordern/bestätigen/zurücknehmen, Handbetrieb starten (Brauen/Gären)/beenden, Wasser bestätigen |
-| Dienst | `braumeister.start_recipe` (`uuid`) – Rezept auf dem Gerät starten |
+| Zahlen | Handbetrieb: Solltemperatur, Timer-Dauer (Minuten) |
+| Buttons | Brauen starten, Abbruch anfordern / bestätigen / zurücknehmen, Handbetrieb starten (Brauen oder Gären) und beenden, Wasser bestätigen |
+| Dienst | `braumeister.start_recipe` – startet ein Rezept auf dem Braumeister (Angabe: Rezept-UUID aus My-Speidel) |
 
-Schalter, Zahlen und Befehle sind nur im passenden Gerätezustand möglich; sonst meldet Home Assistant die Fehlermeldung des Servers.
-Aktualisierung alle 5 Sekunden.
+Die Werte werden alle 5 Sekunden aktualisiert. Schalter, Zahlen und Buttons funktionieren nur, wenn der Braumeister
+im passenden Zustand ist (z. B. Handbetrieb für die Pumpe). Sonst zeigt Home Assistant eine Fehlermeldung an.
 
-> Hinweis: Die Zuordnung `heating`/`pump` (2 = an) und die Feldnamen der Statusmeldung (`temperature`, `targetTemperature`)
-> stammen aus dem Code des Projekts; ob sie bei laufendem Gerät exakt so ankommen, sollte beim nächsten Sud geprüft werden.
+## Hinweise
 
-## Updates
+- Das Dashboard hat keine Anmeldung und ist nur aus dem Heimnetz erreichbar. Gib den Port nicht im Router frei.
+- Der Braumeister muss eingeschaltet sein und sich beim Dashboard melden. Sonst steht **Online** auf „aus“.
 
-Änderungen im Repo committen, pushen und ein neues Release anlegen (Tag z. B. `v1.0.1`, `version` in
-`custom_components/braumeister/manifest.json` passend erhöhen). HACS zeigt dann ein Update an; danach Home Assistant neu starten.
-Ohne Release nutzt HACS den neuesten Commit des Standardzweigs.
+## Probleme?
 
-## Hinweis zum Dashboard
-
-Die Integration braucht den Endpunkt `/api/ha/state` im Braumeister-Dashboard (`server/api/homeassistant.js`
-im Projekt-Repo). Dashboard und Integration müssen zusammenpassen.
+- *„Dashboard nicht erreichbar“* bei der Einrichtung: Adresse und Port prüfen und testen, ob das Dashboard im Browser
+  unter `http://<Adresse>:8080` erreichbar ist.
+- Werte bleiben leer: Prüfen, ob der Braumeister online ist.
+- Fehler melden: [GitHub Issues](https://github.com/tomfxs/braumeister-homeassistant/issues).
