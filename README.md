@@ -27,6 +27,10 @@ Temperatur, Zustand, Fortschritt und Warnungen im Blick, Steuerung per Knopfdruc
 
 <img src="https://raw.githubusercontent.com/tomfxs/braumeister-homeassistant/main/images/sensoren.png" width="320" alt="Sensoren des Braumeisters">
 
+**Diagnose** – Firmware, letzter Handy-Hinweis und Probelauf:
+
+<img src="https://raw.githubusercontent.com/tomfxs/braumeister-homeassistant/main/images/diagnose.png" width="420" alt="Diagnose">
+
 ## 📦 Voraussetzungen
 
 - Home Assistant **2025.1** oder neuer mit installiertem [HACS](https://hacs.xyz)
