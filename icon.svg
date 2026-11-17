@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1c3558"/><stop offset="1" stop-color="#0e1a2f"/></linearGradient>
+    <linearGradient id="steel" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8d9aae"/><stop offset=".35" stop-color="#eef2f8"/><stop offset=".7" stop-color="#b5c0d0"/><stop offset="1" stop-color="#7a879b"/></linearGradient>
+    <linearGradient id="beer" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffc247"/><stop offset="1" stop-color="#e07b00"/></linearGradient>
+    <clipPath id="body"><path d="M62 112h132v84a22 22 0 0 1-22 22H84a22 22 0 0 1-22-22z"/></clipPath>
+  </defs>
+  <rect width="256" height="256" rx="56" fill="url(#bg)"/>
+  <!-- Steam -->
+  <g fill="none" stroke="#9fb4d3" stroke-width="7" stroke-linecap="round" opacity=".75">
+    <path d="M100 62c-9-9 9-17 0-27"/><path d="M128 56c-9-9 9-17 0-27"/><path d="M156 62c-9-9 9-17 0-27"/>
+  </g>
+  <!-- Henkel -->
+  <rect x="38" y="132" width="26" height="12" rx="6" fill="#aab6c8"/>
+  <rect x="192" y="132" width="26" height="12" rx="6" fill="#aab6c8"/>
+  <!-- Topf -->
+  <path d="M62 112h132v84a22 22 0 0 1-22 22H84a22 22 0 0 1-22-22z" fill="url(#steel)"/>
+  <g clip-path="url(#body)">
+    <rect x="62" y="160" width="132" height="60" fill="url(#beer)" opacity=".0"/>
+  </g>
+  <!-- Deckel -->
+  <rect x="54" y="94" width="148" height="24" rx="12" fill="url(#steel)"/>
+  <rect x="116" y="78" width="24" height="18" rx="9" fill="#dfe6f1"/>
+  <!-- Schauglas mit Bier -->
+  <rect x="104" y="136" width="48" height="64" rx="12" fill="#0e1a2f"/>
+  <rect x="108" y="150" width="40" height="46" rx="9" fill="url(#beer)"/>
+  <path d="M108 154a9 9 0 0 1 9-9h22a9 9 0 0 1 9 9v2H108z" fill="#fff6dc"/>
+  <circle cx="122" cy="140" r="6" fill="#fff6dc"/><circle cx="136" cy="138" r="7" fill="#fff6dc"/><circle cx="146" cy="143" r="4.5" fill="#fff6dc"/>
+  <!-- Hopfendolde -->
+  <g transform="translate(178 176) rotate(18)">
+    <path d="M0-26c14 6 20 18 16 32C12 20 4 28 0 30c-4-2-12-10-16-24C-20-8-14-20 0-26z" fill="#7fc650"/>
+    <path d="M0-26c-2 18-2 38 0 56M-12-12c8 4 16 4 24 0M-14 4c9 5 19 5 28 0" fill="none" stroke="#4f9a2c" stroke-width="3" stroke-linecap="round"/>
+  </g>
+</svg>

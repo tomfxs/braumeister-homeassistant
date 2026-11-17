@@ -1,5 +1,7 @@
 # Braumeister – Home-Assistant-Integration
 
+<img src="icon.svg" width="96" align="right" alt="Braumeister">
+
 Bringt den Speidel Braumeister mit allen wichtigen Daten in Home Assistant. Die Integration spricht mit dem
 lokalen Braumeister-Dashboard (`node dashboard.js`, Port 8080), das `braumeister-client.js` füttert –
 sie verbindet sich also nicht selbst mit My-Speidel, der Shelly-Steckdose oder der Kamera.
