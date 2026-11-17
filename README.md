@@ -49,6 +49,16 @@ Für die meisten ist **„Direkt“** die einfachste Lösung. Das Dashboard brau
 
 ## 🚀 Installation
 
+**Mit HACS installieren (empfohlen):**
+
+[![Dieses Repository in HACS öffnen](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=tomfxs&repository=braumeister-homeassistant&category=integration)
+
+Ein Klick öffnet deine Home-Assistant-Instanz direkt auf der Braumeister-Seite in HACS. Dort auf **Herunterladen** klicken, Home Assistant **neu starten** und die Integration einrichten:
+
+[![Integration in Home Assistant einrichten](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=braumeister)
+
+**Oder von Hand in HACS:**
+
 1. In Home Assistant **HACS** öffnen, oben rechts das Menü (⋮) › **Benutzerdefinierte Repositories**.
 2. Als Repository `https://github.com/tomfxs/braumeister-homeassistant` eintragen, als Kategorie **Integration** wählen und **Hinzufügen** klicken.
 3. In HACS nach **Braumeister** suchen und **Herunterladen**.
