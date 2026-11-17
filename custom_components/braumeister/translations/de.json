@@ -3,18 +3,46 @@
     "step": {
       "user": {
         "title": "Braumeister",
+        "description": "Wie soll sich Home Assistant mit dem Braumeister verbinden?",
+        "menu_options": {
+          "dashboard": "Über das Braumeister-Dashboard",
+          "direct": "Direkt über My-Speidel (ohne Dashboard)"
+        }
+      },
+      "dashboard": {
+        "title": "Braumeister-Dashboard",
         "description": "Adresse des Braumeister-Dashboards (dashboard.js).",
         "data": {
           "host": "Host",
           "port": "Port"
         }
+      },
+      "direct": {
+        "title": "My-Speidel",
+        "description": "Zugangsdaten von www.myspeidel.com. Die Gerätenummer steht in der Adresse deiner Steuerungsseite (…/braumeister/control/**16014**).",
+        "data": {
+          "username": "Benutzername",
+          "password": "Passwort",
+          "device": "Gerätenummer"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Neu anmelden",
+        "description": "My-Speidel hat die Anmeldung abgelehnt. Bitte Zugangsdaten erneut eingeben.",
+        "data": {
+          "username": "Benutzername",
+          "password": "Passwort"
+        }
       }
     },
     "error": {
-      "cannot_connect": "Dashboard nicht erreichbar"
+      "cannot_connect": "Nicht erreichbar",
+      "invalid_auth": "Benutzername oder Passwort falsch",
+      "invalid_device": "Die Gerätenummer besteht nur aus Ziffern"
     },
     "abort": {
-      "already_configured": "Bereits eingerichtet"
+      "already_configured": "Bereits eingerichtet",
+      "reauth_successful": "Zugangsdaten aktualisiert"
     }
   },
   "entity": {

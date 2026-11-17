@@ -2,6 +2,11 @@
 
 DOMAIN = "braumeister"
 DEFAULT_PORT = 8080
+
+CONF_MODE = "mode"
+CONF_DEVICE = "device"
+MODE_DASHBOARD = "dashboard"      # über das lokale Braumeister-Dashboard
+MODE_DIRECT = "direct"            # direkt über My-Speidel, ohne Dashboard
 SCAN_INTERVAL_SECONDS = 5
 PLATFORMS = ["sensor", "binary_sensor", "switch", "number", "button"]
 

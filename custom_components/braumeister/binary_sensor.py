@@ -19,6 +19,10 @@ class BmBinaryDescription(BinarySensorEntityDescription):
     fn: Callable[[Callable[[str], Any]], bool | None]
 
 
+# Nur mit Dashboard verfügbar
+DASHBOARD_ONLY = {"session_running", "dry_run"}
+
+
 BINARY: tuple[BmBinaryDescription, ...] = (
     BmBinaryDescription(key="online", translation_key="online", device_class=BinarySensorDeviceClass.CONNECTIVITY,
                         fn=lambda v: bool(v("device.fresh"))),
@@ -44,7 +48,8 @@ BINARY: tuple[BmBinaryDescription, ...] = (
 
 
 async def async_setup_entry(hass: HomeAssistant, entry, async_add_entities: AddEntitiesCallback) -> None:
-    async_add_entities(BraumeisterBinary(entry.runtime_data, d) for d in BINARY)
+    c = entry.runtime_data
+    async_add_entities(BraumeisterBinary(c, d) for d in BINARY if not (c.is_direct and d.key in DASHBOARD_ONLY))
 
 
 class BraumeisterBinary(BraumeisterEntity, BinarySensorEntity):

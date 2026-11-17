@@ -30,6 +30,10 @@ class BmSensorDescription(SensorEntityDescription):
     convert: Callable[[Any], Any] | None = None
 
 
+# Nur mit Dashboard verfügbar (Sessions, Checkliste, Hinweise liegen in dessen Datenbank)
+DASHBOARD_ONLY = {"session", "checklist_done", "last_notification"}
+
+
 SENSORS: tuple[BmSensorDescription, ...] = (
     BmSensorDescription(key="state", translation_key="state", path="device.state",
                         device_class=SensorDeviceClass.ENUM, options=DEVICE_STATES),
@@ -63,7 +67,8 @@ SENSORS: tuple[BmSensorDescription, ...] = (
 
 
 async def async_setup_entry(hass: HomeAssistant, entry, async_add_entities: AddEntitiesCallback) -> None:
-    async_add_entities(BraumeisterSensor(entry.runtime_data, d) for d in SENSORS)
+    c = entry.runtime_data
+    async_add_entities(BraumeisterSensor(c, d) for d in SENSORS if not (c.is_direct and d.key in DASHBOARD_ONLY))
 
 
 class BraumeisterSensor(BraumeisterEntity, SensorEntity):

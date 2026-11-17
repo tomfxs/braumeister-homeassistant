@@ -17,10 +17,14 @@ _LOGGER = logging.getLogger(__name__)
 
 
 class BraumeisterCoordinator(DataUpdateCoordinator[dict[str, Any]]):
+    is_direct = False
+
     def __init__(self, hass: HomeAssistant, host: str, port: int) -> None:
         super().__init__(hass, _LOGGER, name=DOMAIN, update_interval=timedelta(seconds=SCAN_INTERVAL_SECONDS))
         self.host, self.port = host, port
         self.base = f"http://{host}:{port}"
+        self.uid = f"{host}:{port}"
+        self.url = self.base
         self.session = async_get_clientsession(hass)
 
     async def _async_update_data(self) -> dict[str, Any]:
