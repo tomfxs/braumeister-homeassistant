@@ -1,6 +1,9 @@
 {
   "domain": "braumeister",
   "name": "Braumeister",
+  "categories": [
+    "diy_makers.web_data_connectors"
+  ],
   "codeowners": [
     "@tomfxs"
   ],
