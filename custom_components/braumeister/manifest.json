@@ -1,14 +1,14 @@
 {
+  "domain": "braumeister",
+  "name": "Braumeister",
   "codeowners": [
     "@tomfxs"
   ],
   "config_flow": true,
   "documentation": "https://github.com/tomfxs/braumeister-homeassistant",
-  "domain": "braumeister",
   "integration_type": "service",
   "iot_class": "cloud_push",
   "issue_tracker": "https://github.com/tomfxs/braumeister-homeassistant/issues",
-  "name": "Braumeister",
   "requirements": [
     "paho-mqtt>=2.0.0"
   ],

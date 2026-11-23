@@ -19,7 +19,7 @@
       },
       "direct": {
         "title": "My-Speidel",
-        "description": "Zugangsdaten von www.myspeidel.com. Die Gerätenummer steht in der Adresse deiner Steuerungsseite (…/braumeister/control/**16014**).",
+        "description": "Deine My-Speidel-Zugangsdaten. Die Gerätenummer steht in der Adresse deiner Steuerungsseite (control/**16014**).",
         "data": {
           "username": "Benutzername",
           "password": "Passwort",

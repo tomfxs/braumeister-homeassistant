@@ -19,7 +19,7 @@
       },
       "direct": {
         "title": "My-Speidel",
-        "description": "Credentials for www.myspeidel.com. The device number is in the address of your control page (…/braumeister/control/**16014**).",
+        "description": "Your My-Speidel credentials. The device number is in the address of your control page (control/**16014**).",
         "data": {
           "username": "Username",
           "password": "Password",
